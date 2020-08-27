@@ -95,7 +95,6 @@ public class Ballon : MonoBehaviour
         {
             gameObject.GetComponent<Transform>().localScale = NormalScaleBalloon;
             transform.position = new Vector3(transform.position.x, transform.position.y, posBack.position.z);     //back
-            print(transform.position + "     " + GameObject.FindWithTag("BackGround").GetComponent<Transform>().position);
         }
     }
     void RandomNewSpeed()

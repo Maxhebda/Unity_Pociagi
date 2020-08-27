@@ -112,7 +112,7 @@ public class Helicopter : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = HelicopterImages[Random.Range(0,HelicopterImages.Length)];
 
         //random if helicopter must landing
-        helicopterNormal = (byte)(Random.Range(0, 4)) == 0 ? true : false;
+        helicopterNormal = (byte)(Random.Range(0, 4)) > 1 ? true : false;
 
         //random left or right
         helicopterDirection = Random.Range(0, 2) == 0 ? true : false;
