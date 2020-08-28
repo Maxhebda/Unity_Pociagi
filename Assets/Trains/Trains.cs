@@ -13,6 +13,8 @@ public class Trains : MonoBehaviour
     [SerializeField] Transform[] leftStop;
     [SerializeField] Transform[] rightStop;
 
+    [SerializeField] GameObject[] soundsHorn;
+
     Vector3 nextPosition;
     Vector3 endPosition;
     byte positionCounter = 0;
@@ -104,8 +106,14 @@ public class Trains : MonoBehaviour
         // ON animate
         train[TrainNumber].GetComponent<Animator>().enabled = true;
 
-       // activate semaphor
-       closeBarrier();
+        // activate semaphor
+        if ((int)(Random.Range(0, 2)) == 0)
+            { 
+                closeBarrier(); 
+            }
+
+        // play horn Train sound
+        playTrainHorn();
     }
     void closeBarrier()
     {
@@ -128,5 +136,14 @@ public class Trains : MonoBehaviour
             //semaforGate.GetComponent<Semafor>().playSemaphoreSound(true);
             semaforGate.GetComponent<Semafor>().barrierIsOpen = null;
         }
+    }
+    void playTrainHorn()
+    {
+        int r = Random.Range(0, soundsHorn.Length);
+        soundsHorn[r].GetComponent<AudioSource>().Play();
+    }
+    public void playTrainHornShort()
+    {
+        soundsHorn[5].GetComponent<AudioSource>().Play();
     }
 }

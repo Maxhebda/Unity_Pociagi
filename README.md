@@ -27,9 +27,13 @@ Game for young children
 * animacja jazdy
 * losowy kierunek jazdy
 * wykrywanie czy szlaban jest otwarty czy zakmnięty i zatrzymywanie się
+* po kliknieciu trąbienie krótkie
+* klakson przed przejazdem kolejowym (6 rodzajów losowanych)
 #### Dwa przyciski [X]
 * dwa przyciski do zamykania by dziecko przez przypadek nie zamknęło
 * trzeba naciśnąć dwa przyciski w odstępie krótszym niż 1.5sec
+#### Chmury
+* przesuwaja się powoli
 
 ### Dane :
 Paczka z plikami : UNITYPACKAGE/moja paczka Pociagi.unitypackage
