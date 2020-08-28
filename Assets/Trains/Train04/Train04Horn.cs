@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Train01Horn : MonoBehaviour
+public class Train04Horn : MonoBehaviour
 {
     GameObject train;
     // Start is called before the first frame update
