@@ -88,7 +88,7 @@ public class Trains : MonoBehaviour
         TrainDirection = Random.Range(0, 2) == (byte)0 ? false : true;
 
         TrainNumber = Random.Range(0, train.Length); //random Train
-        //TrainNumber = 4;
+        //TrainNumber = 6;
         positionCounter = 0;
         if (TrainDirection)     // go left
         {
