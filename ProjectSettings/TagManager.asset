@@ -8,6 +8,8 @@ TagManager:
   - GameManager
   - ClickSound
   - Train
+  - ClickOnOff
+  - ClickButtonsMenu
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject clickSound;
+    GameObject clickOnOff;
+
     bool leftQuitClick = false;
     bool rightQuitClick = false;
     float timeQuitClick = 1.5f;     //1.5sec
@@ -13,6 +16,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         clickSound = GameObject.FindGameObjectWithTag("ClickSound");
+        clickOnOff = GameObject.FindGameObjectWithTag("ClickOnOff");
     }
 
     // Update is called once per frame
@@ -45,11 +49,20 @@ public class GameManager : MonoBehaviour
     {
         clickSound.GetComponent<AudioSource>().Play();  //click
     }
+    public void SoundPlay_OnOff()
+    {
+        clickOnOff.GetComponent<AudioSource>().Play();  //click
+    }
     public void ClickRightQuit()
     {
         SoundPlay_Click();
         rightQuitClick = true;
         timeQuitCounter = timeQuitClick;
+    }
+    public void ClickMenu()
+    {
+        SoundPlay_Click();
+        SceneManager.LoadScene(1);
     }
     public void ClickLeftQuit()
     {
