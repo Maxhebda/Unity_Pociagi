@@ -13,6 +13,7 @@ public class Kulka01 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.SetParent(null);
         liveTime = Random.Range(15f, 40f);
         gameObject.GetComponent<SpriteRenderer>().sprite = imagesBuuble[Random.Range(0, imagesBuuble.Length)];
         float skala = Random.Range(0.3f, 0.8f);
@@ -33,7 +34,7 @@ public class Kulka01 : MonoBehaviour
             GameObject soundTmp = Instantiate(sound);
             playSoundDestroy = false;
         }
-        if (liveTime < 0 || gameObject.transform.position.y < -10f)
+        if (liveTime < 0 || gameObject.transform.position.y < -6f)
         {
             Destroy(gameObject);
         }
