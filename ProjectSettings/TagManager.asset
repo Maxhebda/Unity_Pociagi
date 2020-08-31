@@ -10,6 +10,9 @@ TagManager:
   - Train
   - ClickOnOff
   - ClickButtonsMenu
+  - MenuButton
+  - KulkaSoundBoom
+  - KulkaPrefab
   layers:
   - Default
   - TransparentFX

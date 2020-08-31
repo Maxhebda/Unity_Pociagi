@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/01_Menu.unity
     guid: 19c0bae78b690e440b9945fa4aa981c5
+  - enabled: 1
+    path: Assets/Scenes/02_Kulki.unity
+    guid: a7ee1648a3b8ec94fb5202a4702db5cf
   m_configObjects: {}
