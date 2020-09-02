@@ -8,7 +8,7 @@ Game for young children
 <img src="./projectScreenImage/Trains2.png" width=300/>
 
 ### Scene 1 interaction:
-flying balloons, helicopters (sometimes lands on a building), 7 different trains, a semaphore, a controlled barrier, a controlled wind turbine, a train horn, stopping trains.
+flying balloons, helicopters (sometimes lands on a building), 7 different trains, a semaphore, a controlled barrier, a controlled wind turbine, a train horn, stopping trains, flying cloud, 6 different airplane.
 ### Scene 2 interaction:
 bubbles or clocks flying out of the tap, added physics, friction and elasticity. you can click on bubbles and timers to destroy them.
 
