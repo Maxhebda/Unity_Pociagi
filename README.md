@@ -18,4 +18,4 @@ Version Unity : Unity 2020.1.3f1 (64-bit)
 System : Windows 10 64bit
 Smartfon test : Samsung J6+, Samsung j5
 
-<img src="./projectScreenImage/Trains1.jpg" width=300/>
+<img src="./projectScreenImage/Trains1.png" width=300/>
