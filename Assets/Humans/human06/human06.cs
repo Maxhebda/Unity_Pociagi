@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class human05 : MonoBehaviour
+public class human06 : MonoBehaviour
 {
     public Transform startLeft;
     public Transform startRight;
@@ -12,27 +12,28 @@ public class human05 : MonoBehaviour
     bool direction;
     Vector3 nextPosition;
     float step;
-    float speed = 1.5f;
+    float speed = 3f;
     float z;
     bool onRotate = false;
     SpriteRenderer spriteRenderer;
     void Start()
     {
         z = transform.position.z;
+        float y = 0.3f;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        speed = Random.Range(1.5f, 3f);
+        speed = Random.Range(2.5f, 3.5f);
         direction = Random.Range((int)0, 2) == 0 ? false : true;  // false = left -> right
         if (direction)
         {
-            transform.position = startLeft.position;
-            nextPosition = startRight.position;
-            spriteRenderer.flipX = false;
+            transform.position = new Vector3(startLeft.position.x, startLeft.position.y + y,z);
+            nextPosition = new Vector3(startRight.position.x, startRight.position.y + y, z);
+            spriteRenderer.flipX = true;
         }
         else
         {
-            transform.position = startRight.position;
-            nextPosition = startLeft.position;
-            spriteRenderer.flipX = true;
+            transform.position = new Vector3(startRight.position.x, startRight.position.y + y, z);
+            nextPosition = new Vector3(startLeft.position.x, startLeft.position.y + y, z);
+            spriteRenderer.flipX = false;
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, z);
         nextPosition = new Vector3(nextPosition.x, nextPosition.y, z);
@@ -51,11 +52,11 @@ public class human05 : MonoBehaviour
         {
             if (direction)
             {
-                spriteRenderer.transform.Rotate(Vector3.back * 2);
+                spriteRenderer.transform.Rotate(Vector3.back * 4);
             }
             else
             {
-                spriteRenderer.transform.Rotate(Vector3.forward * 2);
+                spriteRenderer.transform.Rotate(Vector3.forward * 4);
             }
         }
     }
@@ -69,7 +70,7 @@ public class human05 : MonoBehaviour
         {
             nextPosition = new Vector3(Random.Range(transform.position.x, startUp2.position.x), startUp1.position.y, nextPosition.z);
         }
-        speed *= 3;
+        speed *= 9;
         onRotate = true;
         gameObject.GetComponent<AudioSource>().Play();
     }

@@ -13,10 +13,12 @@ public class human01 : MonoBehaviour
     Vector3 nextPosition;
     float step;
     float speed = 1.5f;
+    float z;
     bool onRotate = false;
     SpriteRenderer spriteRenderer;
     void Start()
     {
+        z = transform.position.z;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         speed = Random.Range(1f, 2f);
         direction = Random.Range((int)0, 2)==0?false:true;  // false = left -> right
@@ -32,6 +34,9 @@ public class human01 : MonoBehaviour
             nextPosition = startLeft.position;
             spriteRenderer.flipX = true;
         }
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, z);
+        nextPosition = new Vector3(nextPosition.x, nextPosition.y, z);
     }
 
     void Update()
