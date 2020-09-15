@@ -20,4 +20,5 @@ bubbles or clocks flying out of the tap, added physics, friction and elasticity.
 <li>Smartfon test : Samsung J6+, Samsung j5</li>
 </ul>
 
-<img src="./projectScreenImage/Trains1.png" width=300/>
+<img src="./projectScreenImage/Trains1.png" width=200/> 
+<img src="./projectScreenImage/Trains4.png" width=200/>

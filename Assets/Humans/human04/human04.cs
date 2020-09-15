@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class human02 : MonoBehaviour
+public class human04 : MonoBehaviour
 {
     public Transform startLeft;
     public Transform startRight;
@@ -12,25 +12,25 @@ public class human02 : MonoBehaviour
     bool direction;
     Vector3 nextPosition;
     float step;
-    float speed = 1f;
+    float speed = 1.5f;
     bool onRotate = false;
     SpriteRenderer spriteRenderer;
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        speed = Random.Range(0.3f, 0.7f);
+        speed = Random.Range(1f, 2f);
         direction = Random.Range((int)0, 2) == 0 ? false : true;  // false = left -> right
         if (direction)
         {
             transform.position = startLeft.position;
             nextPosition = startRight.position;
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         else
         {
             transform.position = startRight.position;
             nextPosition = startLeft.position;
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
     }
 
@@ -65,7 +65,7 @@ public class human02 : MonoBehaviour
         {
             nextPosition = new Vector3(Random.Range(transform.position.x, startUp2.position.x), startUp1.position.y, nextPosition.z);
         }
-        speed *= 9;
+        speed *= 3;
         onRotate = true;
         gameObject.GetComponent<AudioSource>().Play();
     }
