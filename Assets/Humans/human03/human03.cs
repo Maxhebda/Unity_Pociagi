@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class human03 : MonoBehaviour
@@ -8,6 +9,12 @@ public class human03 : MonoBehaviour
     public Transform startRight;
     public Transform startUp1;
     public Transform startUp2;
+    public GameObject human07Boy;
+
+    public Transform startLeftBoy;
+    public Transform startRightBoy;
+    public Transform startLeft2Boy;
+    public Transform startRight2Boy;
 
     bool direction;
     Vector3 nextPosition;
@@ -15,9 +22,13 @@ public class human03 : MonoBehaviour
     float speed = 3f;
     float z;
     bool onRotate = false;
+    bool onlyOneBoy = true;
+    bool notclickBoy = true;
     SpriteRenderer spriteRenderer;
     void Start()
     {
+        onlyOneBoy = true;
+        notclickBoy = true;
         z = transform.position.z;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         speed = Random.Range(3f, 6f);
@@ -45,7 +56,31 @@ public class human03 : MonoBehaviour
         if (transform.position == nextPosition)
         {
             gameObject.GetComponent<AudioSource>().Stop();
-            Destroy(gameObject);
+
+            // create boy
+            if (onlyOneBoy && notclickBoy)
+            {
+                GameObject obj = Instantiate(human07Boy, GameObject.FindWithTag("Human").transform);
+                if (direction)
+                {
+                    obj.GetComponent<human07>().start = startLeftBoy;
+                    obj.GetComponent<human07>().start2 = startLeft2Boy;
+                    obj.GetComponent<human07>().startUp = startUp2;
+                    obj.GetComponent<human07>().start = startRightBoy;
+                    obj.GetComponent<human07>().start2 = startRight2Boy;
+                    obj.GetComponent<human07>().startUp = startUp1;
+                }
+                else
+                {
+                    obj.GetComponent<human07>().start = startLeftBoy;
+                    obj.GetComponent<human07>().start2 = startLeft2Boy;
+                    obj.GetComponent<human07>().startUp = startUp2;
+                }
+                obj.GetComponent<human07>().direction = direction;
+                onlyOneBoy = false;
+            }
+
+            Destroy(gameObject,1f);
         }
         if (onRotate)
         {
@@ -69,6 +104,7 @@ public class human03 : MonoBehaviour
         {
             nextPosition = new Vector3(Random.Range(transform.position.x, startUp2.position.x), startUp1.position.y, nextPosition.z);
         }
+        notclickBoy = false;
         speed *= 3;
         onRotate = true;
         gameObject.GetComponent<AudioSource>().Play();
