@@ -10,6 +10,7 @@ public class HumanRandom : MonoBehaviour
     public GameObject human04;
     public GameObject human05;
     public GameObject human06;
+    public GameObject human08;
 
     public Transform startLeftGlobal;
     public Transform startRightGlobal;
@@ -34,7 +35,7 @@ public class HumanRandom : MonoBehaviour
         if (counter < 0)
         {
             counter = Random.Range(0, 5);
-            switch(Random.Range((int)0,6))
+            switch(Random.Range((int)0,7))
             {
                 case 0:
                     addHuman01();
@@ -54,6 +55,12 @@ public class HumanRandom : MonoBehaviour
                 case 5:
                     if (Random.Range((int)0, 3) == 0)
                         addHuman06();
+                    else
+                        counter = 0;
+                    break;
+                case 6:
+                    if (Random.Range((int)0, 5) == 0)
+                        addHuman08();
                     else
                         counter = 0;
                     break;
@@ -113,5 +120,13 @@ public class HumanRandom : MonoBehaviour
         obj.GetComponent<human06>().startRight = startRightGlobal;
         obj.GetComponent<human06>().startUp1 = startUp1Global;
         obj.GetComponent<human06>().startUp2 = startUp2Global;
+    }
+    private void addHuman08()
+    {
+        GameObject obj = Instantiate(human08, gameObject.transform);
+        obj.GetComponent<human08>().startLeft = startLeftGlobal;
+        obj.GetComponent<human08>().startRight = startRightGlobal;
+        obj.GetComponent<human08>().startUp1 = startUp1Global;
+        obj.GetComponent<human08>().startUp2 = startUp2Global;
     }
 }
